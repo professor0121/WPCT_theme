@@ -21,7 +21,7 @@ Website HEADER part.
 <body <?php body_class("bg-gray-100 text-gray-900"); ?>>
 
     <!-- Top Header -->
-    <div class="bg-gray-900 text-white py-2">
+    <div class="bg-gray-900 text-white py-2 flex justify-between">
     <div class="container mx-auto flex flex-wrap justify-between items-center px-4">
         <ul class="flex flex-wrap gap-4 sm:gap-6 text-sm">
             <li class="flex items-center gap-2">
@@ -50,11 +50,21 @@ Website HEADER part.
             </li>
         </ul>
     </div>
+    <div>
+        <div class="container mx-auto md:flex md:justify-between block items-center px-4 gap-4">
+            <div class="text-sm text-gray-400">
+                <?php echo get_theme_mod('header_top_phone', '+1234567890'); ?>
+            </div>
+            <div class="text-sm text-gray-400">
+                <?php echo get_theme_mod('header_top_email', 'example@email.com'); ?>
+            </div>
+        </div>
+    </div>
 </div>
 
 
     <!-- Main Header -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md px-14">
         <div class="container mx-auto flex justify-between items-center py-4 px-4">
             <!-- Logo -->
            
@@ -70,6 +80,7 @@ Website HEADER part.
 
 
             <!-- Navigation -->
+         <div class="flex items-center gap-4">
             <nav class="hidden md:flex space-x-6">
                 <?php
                 wp_nav_menu(array(
@@ -79,9 +90,15 @@ Website HEADER part.
                 ));
                 ?>
             </nav>
-            <button class="bg-blue-500"> <?php echo get_theme_mod('header_top_button_1', 'Feedback'); ?></button>
-            <button> <?php echo get_theme_mod('header_top_button_2', 'Feedback'); ?></button>
-
+            <div class="hidden md:flex gap-4">
+                <button class="bg-blue-500 px-14 py-2 border rounded-lg">
+                    <?php echo get_theme_mod('header_top_button_1', 'Feedback'); ?>
+                </button>
+                <button class="bg-blue-500 px-14 py-2 border rounded-lg">
+                    <?php echo get_theme_mod('header_top_button_2', 'Feedback'); ?>
+                </button>
+            </div>
+          
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -90,6 +107,7 @@ Website HEADER part.
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </button>
+        </div>
         </div>
 
         <!-- Mobile Menu -->
