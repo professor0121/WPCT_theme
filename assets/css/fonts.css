@@ -1,0 +1,28 @@
+@font-face {
+     font-family: 'DegularTextBold';
+     src: url('../fonts/DegularText-Bold.woff2') format('woff2'),
+          url('../fonts/DegularText-Bold.woff') format('woff');
+     font-weight: bold;
+     font-style: normal;
+   }
+   
+   @font-face {
+     font-family: 'DegularVariable';
+     src: url('../fonts/DegularVariable.woff2') format('woff2'),
+          url('../fonts/DegularVariable.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+   }
+   
+   @font-face {
+     font-family: 'ErbaumRegular';
+     src: url('../fonts/Erbaum-Regular.woff2') format('woff2'),
+          url('../fonts/Erbaum-Regular.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+   }
+   
+   body {
+     font-family: 'ErbaumRegular', serif;
+   }
+   

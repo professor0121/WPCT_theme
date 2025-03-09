@@ -21,10 +21,14 @@ require_once WPCT_THEME_DIR . '/inc/woocommerce-support.php';
 require_once WPCT_THEME_DIR . '/inc/elementor-support.php';
 require_once WPCT_THEME_DIR . '/inc/widgets.php';
 require_once WPCT_THEME_DIR . '/inc/customizer.php';
+require_once WPCT_THEME_DIR . '/inc/customize-home.php';
+require_once WPCT_THEME_DIR . '/inc/customize-slider.php';
+
 
 // Enqueue Tailwind CSS
 function enqueue_tailwind_cdn() {
-    wp_enqueue_style('tailwind-css', WPCT_THEME_URI . '/dist/style.css', [], null);
+    wp_enqueue_style('tailwind-css', WPCT_THEME_URI . '/dist/styles.css', [], null);
+    wp_enqueue_style('custom-fonts', WPCT_THEME_URI . '/assets/css/fonts.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_tailwind_cdn');
 
@@ -33,7 +37,10 @@ function wpct_supports_block_widgets() {
 }
 add_action( 'after_setup_theme', 'wpct_supports_block_widgets' );
 
- 
+function load_custom_fonts() {
+}
+add_action('wp_enqueue_scripts', 'load_custom_fonts');
+
 
  
 
