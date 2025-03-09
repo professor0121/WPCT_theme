@@ -52,10 +52,10 @@ Website HEADER part.
     </div>
     <div>
         <div class="container mx-auto md:flex md:justify-between block items-center px-4 gap-4">
-            <div class="text-sm text-gray-400">
+            <div class="text-sm text-white">
                 <?php echo get_theme_mod('header_top_phone', '+1234567890'); ?>
             </div>
-            <div class="text-sm text-gray-400">
+            <div class="text-sm text-white">
                 <?php echo get_theme_mod('header_top_email', 'example@email.com'); ?>
             </div>
         </div>
@@ -64,11 +64,11 @@ Website HEADER part.
 
 
     <!-- Main Header -->
-    <header class="bg-white shadow-md px-14">
+    <header class="bg-gray-900 shadow-md px-14">
         <div class="container mx-auto flex justify-between items-center py-4 px-4">
             <!-- Logo -->
            
-            <div class="text-xl font-bold text-gray-800">
+            <div class="text-xl font-bold text-white">
                 <a href="<?php echo home_url(); ?>">
                     <?php if (get_theme_mod('header_logo')) : ?>
                         <img src="<?php echo esc_url(get_theme_mod('header_logo')); ?>" alt="<?php bloginfo('name'); ?>" class="h-12">
@@ -86,15 +86,15 @@ Website HEADER part.
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
                     'container' => false,
-                    'items_wrap' => '<ul class="flex space-x-6 text-gray-700">%3$s</ul>'
+                    'items_wrap' => '<ul class="flex space-x-6 text-white">%3$s</ul>'
                 ));
                 ?>
             </nav>
             <div class="hidden md:flex gap-4">
-                <button class="bg-blue-500 px-14 py-2 border rounded-lg">
+                <button class="bg-white px-14 py-2   text-gray-900 rounded-lg">
                     <?php echo get_theme_mod('header_top_button_1', 'Feedback'); ?>
                 </button>
-                <button class="bg-blue-500 px-14 py-2 border rounded-lg">
+                <button class="bg-yellow-500 px-14 py-2  text-gray-900 rounded-lg">
                     <?php echo get_theme_mod('header_top_button_2', 'Feedback'); ?>
                 </button>
             </div>

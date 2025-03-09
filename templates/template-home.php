@@ -40,7 +40,7 @@ get_header();
             <div class="absolute inset-0 bg-black bg-opacity-30 "></div>
 
             <!-- Slide Content -->
-            <div class="relative z-10 text-white top-64 left-14 px-4">
+            <div class="relative z-10 text-white top-72 left-24 px-4">
                 <h2 class="text-4xl font-bold mb-2">
                 <?php echo esc_html( $heading ); ?>
                 </h2>
@@ -49,10 +49,10 @@ get_header();
                 </p>
                 <!-- Example Buttons (Optional) -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-start">
-                <a href="#" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded shadow hover:bg-gray-200 transition">
+                <a href="#" class="inline-block rounded-2xl bg-white text-black font-semibold px-6 py-3 rounded shadow hover:bg-gray-200 transition">
                     Kainų skaičiuoklė
                 </a>
-                <a href="#" class="inline-block bg-yellow-500 text-white font-semibold px-6 py-3 rounded shadow hover:bg-yellow-600 transition">
+                <a href="#" class="inline-block rounded-2xl bg-yellow-500 text-white font-semibold px-6 py-3 rounded shadow hover:bg-yellow-600 transition">
                     Gauti pasiūlymą
                 </a>
                 </div>
@@ -97,7 +97,33 @@ get_header();
 </div>
 
 <!--First section  -->
+<section class="flex flex-col items-center justify-center  px-6 py-18">
+    <!-- Icon or Logo -->
+    <div class="mb-6">
+      <!-- Replace the placeholder below with your actual icon/logo -->
+      <img 
+        src="https://via.placeholder.com/40" 
+        alt="Icon" 
+        class="h-10 w-10 mx-auto"
+      />
+    </div>
 
+    <!-- Main Text -->
+    <p class="text-lg md:text-xl max-w-3xl text-center leading-relaxed mb-8">
+       <?php echo get_theme_mod('home_section1_description',' Elegantiško dizaino, ilgaamžiai, dėmėsingi ekologijai sprendimai Jūsų namams, balkonui, terasai ar biurui! Nes kokybė atsipeka.')?>
+      <span class="text-yellow-500 font-semibold">
+      <?php echo get_theme_mod('home_section1_color_description','Nes kokybė atsipeka.')?>
+        </span>
+    </p>
+
+    <!-- Call-to-Action Button -->
+    <a 
+      href="#" 
+      class="inline-block bg-yellow-500 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-600 transition"
+    >
+      Gauti pasiūlymą
+    </a>
+  </section>
 
 
 <!--Second section  -->
