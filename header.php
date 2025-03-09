@@ -18,10 +18,10 @@ Website HEADER part.
     <link rel="stylesheet" href=" <?php echo get_template_directory()?>/assets/css/custom.css">
 </head>
 
-<body <?php body_class("bg-gray-100 text-gray-900"); ?>>
+<body <?php body_class(" text-gray-900"); ?>>
 
     <!-- Top Header -->
-    <div class="bg-gray-900 text-white py-2 flex justify-between">
+    <div class=" bg-gray-800 text-white py-2 flex justify-between hidden md:block">
     <div class="container mx-auto flex flex-wrap justify-between items-center px-4">
         <ul class="flex flex-wrap gap-4 sm:gap-6 text-sm">
             <li class="flex items-center gap-2">
@@ -64,7 +64,7 @@ Website HEADER part.
 
 
     <!-- Main Header -->
-    <header class="bg-gray-900 shadow-md px-14">
+    <header class="bg-gray-900 shadow-md px-4 md:px-14">
         <div class="container mx-auto flex justify-between items-center py-4 px-4">
             <!-- Logo -->
            
