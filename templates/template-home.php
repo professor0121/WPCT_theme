@@ -24,6 +24,7 @@ get_header();
                 $heading    = get_theme_mod( "my_slider_heading_$i", "Slide $i Heading" );
                 $subheading = get_theme_mod( "my_slider_subheading_$i", "Slide $i Subheading" );
                 $image_id   = get_theme_mod( "my_slider_image_$i" );
+                $color_heading=get_theme_mod("my_slider_color_heading_$i");
                 
                 if ( ! $image_id ) {
                     // If no image is set, skip the slide
@@ -41,8 +42,9 @@ get_header();
 
             <!-- Slide Content -->
             <div class="relative z-10 text-white md:top-72 md:left-24 md:px-4 px-10 top-15">
-                <h2 class="text-4xl font-bold mb-2">
-                <?php echo esc_html( $heading ); ?>
+                <h2 class="text-4xl font-bold mb-2 flex">
+                <span><?php echo esc_html( $heading ); ?></span>
+                <span><?php echo esc_html( $color_heading ); ?></span>
                 </h2>
                 <p class="text-xl mb-6">
                 <?php echo esc_html( $subheading ); ?>
@@ -119,7 +121,7 @@ get_header();
     <!-- Call-to-Action Button -->
     <a 
       href="#" 
-      class="inline-block bg-yellow-500 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-600 transition"
+      class="inline-block bg-yellow-500 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-yellow-600 transition"
     >
       Gauti pasiūlymą
     </a>
@@ -250,9 +252,10 @@ get_header();
     <!-- Description -->
     <div class="md:w-2/3 text-gray-600 leading-relaxed">
       <p>
-        Lorem ipsum dolor sit amet consectetur. Nec ac egestas sed amet gravida vulputate.
+        <!-- Lorem ipsum dolor sit amet consectetur. Nec ac egestas sed amet gravida vulputate.
         Placari tempor cursus sit feugiat at sit nisl vel. Ridiculus nulla faucibus at orci
-        mauris vel ac. Sollicitudin sapien molestie augue commodo.
+        mauris vel ac. Sollicitudin sapien molestie augue commodo. -->
+        <?php echo get_theme_mod( 'home_Paslaugos_description', '' );?>
       </p>
     </div>
   </div>
