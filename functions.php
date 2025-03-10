@@ -23,6 +23,7 @@ require_once WPCT_THEME_DIR . '/inc/widgets.php';
 require_once WPCT_THEME_DIR . '/inc/customizer.php';
 require_once WPCT_THEME_DIR . '/inc/customize-home.php';
 require_once WPCT_THEME_DIR . '/inc/customize-slider.php';
+require_once WPCT_THEME_DIR . '/inc/custom-post-type.php';
 
 
 // Enqueue Tailwind CSS

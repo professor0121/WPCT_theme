@@ -11,13 +11,14 @@ get_header();
 ?>
 <!--Hero section  -->
 <div class="bg-gray-900">
+  
     <link
     rel="stylesheet"
     href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <section class="relative w-full h-screen mx-auto sm:p-2 md:px-8 sm:p-2 md:py-8 rounded-lg ">
-    <div class="swiper mySwiper h-screen rounded-lg ">
-        <div class="swiper-wrapper h-screen rounded-lg ">
+    <section class="relative w-full h-[95vh] overflow-hidden mx-auto   md:px-24 sm:p-2 md:py-8 rounded-3xl ">
+    <div class="swiper mySwiper  rounded-2xl h-full ">
+        <div class="swiper-wrapper  rounded-2xl h-full ">
 
         <?php for ( $i = 1; $i <= 3; $i++ ) : 
                 // Retrieve settings from Customizer
@@ -129,8 +130,8 @@ get_header();
 
 
 <!--Second section  -->
-<section class="max-w-7xl mx-auto px-4 py-12">
-  <!-- Heading & Description -->
+<section class="w-[90vw] self-center bg-[#F7F7F7] mx-14 py-12">
+     <!-- Heading & Description -->
   <div class="md:flex md:items-center md:justify-between mb-8">
     <h2 class="text-3xl font-bold mb-4 md:mb-0">
       Produkcija
@@ -139,108 +140,75 @@ get_header();
       <span><?php echo get_theme_mod('home_section2_produkcija_description', 'Lorem ipsum dolor sit amet consectetur. Nec ac egestas sed amet gravida vulputate. Placari tempor cursus sit feugiat at sit nisl vel. Ridiculus nulla faucibus at orci mauris vel ac. Sollicitudin sapien molestie augue commodo.'); ?></span>
     </p>
   </div>
+    <?php
 
-  <!-- Grid of Items -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Card Item 1 -->
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col">
-      <!-- Image Container -->
-      <div class="mb-4 h-32 w-full py-3 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-        <img class="object-contain w-full h-full" 
-             src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Langai.png' ); ?>" 
-             alt="Langai window image" />
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Langai</h3>
-      <a href="#" class="mt-auto inline-flex items-center gap-2 text-yellow-500 hover:text-yellow-600 font-medium">
-        <span>Daugiau</span>
-        <!-- Arrow Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-        </svg>
-      </a>
-    </div>
+    
+    // Query for all production post IDs.
+    $production_posts = get_posts( array(
+        'post_type'      => 'production',
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+    ) );
 
-    <!-- Card Item 2 -->
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col">
-      <div class="mb-4 h-32 w-full py-3 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-        <img class="object-contain w-full h-full" 
-             src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/florida-as-r.png' ); ?>" 
-             alt="Durys image" />
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Durys</h3>
-      <a href="#" class="mt-auto inline-flex items-center gap-2 text-yellow-500 hover:text-yellow-600 font-medium">
-        <span>Daugiau</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-        </svg>
-      </a>
-    </div>
+    if ( ! empty( $production_posts ) ) {
+        // Retrieve only the categories associated with these production posts.
+        $terms = get_terms( array(
+            'taxonomy'   => 'category', // Change this if you are using a custom taxonomy.
+            'hide_empty' => true,
+            'object_ids' => $production_posts,
+        ) );
 
-    <!-- Card Item 3 -->
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col">
-      <div class="mb-4 h-32 w-full py-3 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-        <img class="object-contain w-full h-full" 
-             src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Žaliuzės.png' ); ?>" 
-             alt="Žaliuzės image" />
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Žaliuzės</h3>
-      <a href="#" class="mt-auto inline-flex items-center gap-2 text-yellow-500 hover:text-yellow-600 font-medium">
-        <span>Daugiau</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-        </svg>
-      </a>
-    </div>
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+            // You can wrap the cards in a container div if needed.
+            echo '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">';
+            foreach ( $terms as $term ) {
+                // Get the link and title (name) of the category.
+                $term_link = esc_url( get_term_link( $term ) );
+                $term_name = esc_html( $term->name );
+                
+                // Attempt to get the category image.
+                // Replace 'category-image-id' with your actual meta key.
+                $term_image_id = get_term_meta( $term->term_id, 'category-image-id', true );
+                $image_url = '';
+                if ( $term_image_id ) {
+                    // This returns an array, the first item is the URL.
+                    $image_data = wp_get_attachment_image_src( $term_image_id, 'thumbnail' );
+                    if ( $image_data ) {
+                        $image_url = $image_data[0];
+                    }
+                }
+                // Use a default image if no image is found.
+                if ( empty( $image_url ) ) {
+                    $image_url = get_template_directory_uri() . '/assets/images/florida-as-r.png';
+                }
+                ?>
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col overflow-hidden">
+                  <div class="mb-4 h-32 w-full py-3 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
+                    <a href="<?php echo $term_link; ?>">
+                      <img class="object-contain w-full h-full" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $term_name ); ?>" />
+                    </a>
+                  </div>
+                  <a href="<?php echo $term_link; ?>" class="mt-auto inline-flex justify-between  gap-2 text-yellow-500 hover:text-yellow-600 font-medium">
+                    <span><?php echo $term_name; ?></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 bg-yellow-500" fill="black" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+                <?php
+            }
+            echo '</div>';
+        } else {
+            echo 'No categories found for production posts.';
+        }
+    } else {
+        echo 'No production posts found.';
+    }
+    ?>
 
-    <!-- Card Item 4 -->
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col">
-      <div class="mb-4 h-32 w-full py-3 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-        <img class="object-contain w-full h-full" 
-             src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Roletai.png' ); ?>" 
-             alt="Roletai image" />
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Roletai</h3>
-      <a href="#" class="mt-auto inline-flex items-center gap-2 text-yellow-500 hover:text-yellow-600 font-medium">
-        <span>Daugiau</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-        </svg>
-      </a>
-    </div>
-
-    <!-- Card Item 5 -->
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col">
-      <div class="mb-4 h-32 w-full py-3 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-        <img class="object-contain w-full h-full" 
-             src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Terasos.png' ); ?>" 
-             alt="Terasos image" />
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Terasos</h3>
-      <a href="#" class="mt-auto inline-flex items-center gap-2 text-yellow-500 hover:text-yellow-600 font-medium">
-        <span>Daugiau</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-        </svg>
-      </a>
-    </div>
-
-    <!-- Card Item 6 -->
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col">
-      <div class="mb-4 h-32 w-full py-3 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-        <img class="object-contain w-full h-full" 
-             src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Balkonai.png' ); ?>" 
-             alt="Balkonai image" />
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Balkonai</h3>
-      <a href="#" class="mt-auto inline-flex items-center gap-2 text-yellow-500 hover:text-yellow-600 font-medium">
-        <span>Daugiau</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-        </svg>
-      </a>
-    </div>
-  </div>
 </section>
+
+ 
 <!--Third section-->
 <section class="max-w-7xl mx-auto px-4 py-12">
   <!-- Top: Heading and Description -->
